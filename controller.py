@@ -92,7 +92,7 @@ class Pour:
     def run(self):
         self.running = True
         ia, ib = MOTORS[self.pump_index]
-        seconds_to_pour = self.amount * OZ_COEFFICIENT
+        seconds_to_pour = self.amount * OZ_COEFFICIENT[self.pump_index]
 
         if RETRACTION_TIME:
             logger.debug(f'Retraction time is set to {RETRACTION_TIME:.2f} seconds. Adding this time to pour time')
